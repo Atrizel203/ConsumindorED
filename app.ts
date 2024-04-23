@@ -19,6 +19,7 @@ amqplib.connect("amqp://18.209.192.241/", function (error0, connection) {
       queue,
       async function (msg : any) {
          try {
+          console.log(msg.content.toString());
            const headers = {
              "Content-Type": "application/json",
            };
@@ -28,7 +29,7 @@ amqplib.connect("amqp://18.209.192.241/", function (error0, connection) {
              headers,
            };
            const result = await fetch(
-             "http://52.202.40.9:4000/api/payments",
+             "http://3.224.188.187:4000/api/payments",
              req
            );
          } catch (error: any) {
