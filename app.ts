@@ -32,6 +32,8 @@ amqplib.connect("amqp://18.209.192.241/", function (error0, connection) {
              "http://3.224.188.187:4000/api/payments",
              req
            );
+           const data=result.json();
+           console.log(data);
          } catch (error: any) {
            throw new Error(error.message);
          }
